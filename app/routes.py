@@ -1,9 +1,11 @@
 from fastapi import APIRouter
 from  motor.motor_asyncio import AsyncIOMotorClient
+from bson import ObjectId
 
-router=APIRouter()
 
-client = AsyncIOMotorClient("mongodb://localhost:27017")
+router=APIRouter() 
+
+client = AsyncIOMotorClient("mongodb://mongotest:mongotest@localhost:27017/")
 db = client["mynddatabase"]
 collection = db["tenders"]
 
